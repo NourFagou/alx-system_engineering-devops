@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times at 9 it will print Hi
+
+c=1
+
+while [[ $c -le 10 ]]
+do
+	if [ $c -eq 9 ]
+	then 
+		echo "Best School"
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	((c++))
+done
