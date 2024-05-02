@@ -1,0 +1,11 @@
+
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+c=1
+
+until [ $c -gt 10 ]
+do
+	echo "Best School"
+	((c++))
+done
