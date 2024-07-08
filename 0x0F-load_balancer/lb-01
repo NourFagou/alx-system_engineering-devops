@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Only use ssh single-character flags
+# You cannot use -l
+# You do not need to handle the case of a private key protected by a passphrase
+ssh -i ~/.ssh/id_rsa ubuntu@54.160.101.103
