@@ -39,5 +39,5 @@ listen myserver
         bind *:443 ssl crt /etc/letsencrypt/live/www.nourfagou.tech/www.nourfagou.tech.pem
         redirect scheme https code 301 if !{ ssl_fc }
         balance roundrobin
-        server server1 34.207.57.185:80 check
-        server server2 100.25.13.25:80 check
+        server 374192-web-01 34.207.57.185:80 check
+        server 374192-web-02 100.25.13.25:80 check
