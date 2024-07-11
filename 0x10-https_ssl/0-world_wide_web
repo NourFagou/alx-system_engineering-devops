@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# DOUBLE THE NUMBER OF WEBSERVERS
+# Usage: ./1-world_wide_web <domain> <subdomain>
+
+# Function to retrieve and display information about a subdomain
+
+domain_information () {
+    # PERFORM DNS LOOKUP FOR THE SUBDOMAIN UNDER THE SPECIFIED DOMAIN
+    line=$(dig "$2", "$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    # EXTRACT RELEVANT INFORAMTION AND PRINT IT
+    echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+}
+
+# CHECK THE NUMBER OF ARGUMENTS PASSED TO THE SCRIPT
+if [ "$#" == 1 ]
+then
+    domain_information "$1" "www"
+    domain_information "$1" "lb-01"
+    domain_information "$1" "web-01"
+    domain_information "$1" "web-02"
+elif [ "$#" == 2 ]
+then
+    domain_information "$1" "$2"
+fi
