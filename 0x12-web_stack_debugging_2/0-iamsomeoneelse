@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# RUN SOFTEWARE AS A THE ROOT USER
+sudo -u "$1" whoami
