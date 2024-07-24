@@ -1,0 +1,9 @@
+mysqldump -u root -p tyrell_corp > ~/tyrell_corp.sql
+scp ~/tyrell_corp.sql ubuntu@:34.207.57.185'~/tyrell_corp.sql'
+
+CHANGE MASTER TO
+	MASTER_HOST="54.160.101.103",
+	MASTER_USER="replica_user",
+	MASTER_PASSWORD="replica_user_pwd",
+	MASTER_LOG_FILE="mysql-bin-1.000001",
+	MASTER_LOG_POS=154;
