@@ -1,4 +1,4 @@
-a#Puppet file that fixes multiple server errors in Nginx server
+#Puppet file that fixes multiple server errors in Nginx server
 
 exec { 'fix_limit':
   path     => ['/usr/bin', '/sbin', '/bin', '/usr/sbin'],
